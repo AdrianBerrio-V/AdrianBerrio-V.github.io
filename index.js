@@ -4,11 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var penguin1 = document.getElementById('penguin1');
     var penguin2 = document.getElementById('penguin2');
     var penguin3 = document.getElementById('penguin3');
-    var currentSong = 0;
+    var penguin4 = document.getElementById('penguin4');
+    var currentSong = 3;
     var songs = [
         'music/hb-infantil.m4a',
         'music/hb-vallenato.m4a',
-        'music/hb-reggaeton.mp3'
+        'music/hb-reggaeton.mp3',
+        'music/besos-limon-miel.m4a'
     ];
 
     function playSong(index) {
@@ -30,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     penguin3.addEventListener('click', function() {
         currentSong = 2;
+        playSong(currentSong);
+    });
+
+    penguin4.addEventListener('click', function() {
+        currentSong = 3;
         playSong(currentSong);
     });
 

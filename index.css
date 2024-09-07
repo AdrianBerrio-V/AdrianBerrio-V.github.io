@@ -24,11 +24,11 @@ body, html {
 .penguin-buttons {
     position: absolute;
     top: 20px;
-    left: 20px;
+    left: 0px;
     display: flex;
     justify-content: space-evenly;
-    gap: 30px;
-    padding: 0 20px;
+    gap: 3px;
+    padding: 0 5px;
 }
 
 .penguin-buttons img {
@@ -159,11 +159,13 @@ body, html {
 
 .window-content {
     background-color: #fff;
-    margin: 15% auto; 
+    margin: 15% 8%; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 600px;
+    max-width: 250px;
+    max-height: 50%;
+    overflow-y: auto;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
