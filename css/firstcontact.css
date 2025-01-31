@@ -22,9 +22,9 @@ body, html {
 }
 
 .penguin-buttons {
+    width: 100%;
     position: absolute;
     top: 20px;
-    left: 0px;
     display: flex;
     justify-content: space-evenly;
     gap: 3px;
@@ -67,13 +67,13 @@ body, html {
 }
 
 .penguin-slider img {
-    width: 35%;
+    width: 25%;
     height: auto;
 }
 
 .penguin-slider {
     display: flex;
-    width: 200%;
+    width: auto;
     animation: scroll 20s linear infinite;
 }
 
@@ -144,7 +144,7 @@ body, html {
     }
 }
 
-/* window */
+
 .window {
     display: none; 
     position: fixed; 
@@ -159,13 +159,11 @@ body, html {
 
 .window-content {
     background-color: #fff;
-    margin: 15% 8%; 
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
-    max-width: 250px;
-    max-height: 50%;
-    overflow-y: auto;
+    max-width: 600px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;

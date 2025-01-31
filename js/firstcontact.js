@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     var audio = document.getElementById('backgroundMusic');
     var penguin1 = document.getElementById('penguin1');
@@ -42,6 +41,25 @@ document.addEventListener('DOMContentLoaded', function() {
 
     playSong(currentSong);
 
+    // Ventana modal
+    var message = document.getElementById("myWindow");
+    var btn = document.getElementById("openWindow");
+    var close = document.getElementsByClassName("close")[0];
+
+    // Cambia el evento de clic para abrir la ventana modal
+    btn.addEventListener('click', function() {
+        message.style.display = "block"; // Muestra la ventana modal
+    });
+
+    close.addEventListener('click', function() {
+        message.style.display = "none"; // Cierra la ventana modal
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == message) {
+            message.style.display = "none"; // Cierra la ventana modal al hacer clic fuera
+        }
+    });
 });
 
 
@@ -73,25 +91,4 @@ text.addEventListener('mouseout', function() {
             char.classList.remove('hover');
         }, i * 50);
     });
-});
-
-
-//Window
-
-var message = document.getElementById("myWindow");
-var btn = document.getElementById("openWindow");
-var close = document.getElementsByClassName("close")[0];
-
-btn.addEventListener('click', function() {
-    message.style.display = "block";
-});
-
-close.addEventListener('click', function() {
-    message.style.display = "none";
-});
-
-window.addEventListener('click', function(event) {
-    if (event.target == message) {
-        message.style.display = "none";
-    }
 });

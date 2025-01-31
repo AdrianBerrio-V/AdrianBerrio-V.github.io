@@ -41,10 +41,12 @@ button {
     border-radius: 8px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     background: linear-gradient(to bottom, #77d5fa, #a2d7ec);
-    transition: transform 200ms ease-in-out, font-weight 200ms ease-in-out;
+    transition: transform 200ms ease-in-out, font-weight 200ms ease-in-out, box-shadow 200ms ease-in-out;
 }
 
 button:hover {
     transform: scale(1.08);
     font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to bottom, #a2d7ec, #77d5fa);
 }
