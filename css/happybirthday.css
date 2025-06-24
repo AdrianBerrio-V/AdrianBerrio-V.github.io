@@ -1,12 +1,12 @@
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', 'Arial', sans-serif;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0;
+    background: linear-gradient(135deg, #b3c6f7 0%, #e6f0fa 100%);
     overflow: hidden;
 }
 
@@ -24,12 +24,12 @@ body, html {
 .penguin-buttons {
     width: 100%;
     position: absolute;
-    top: 20px;
+    top: 24px;
     left: 0;
     display: flex;
-    justify-content: space-evenly;
-    gap: 30px;
-    padding: 0 20px;
+    justify-content: center;
+    gap: 32px;
+    z-index: 2;
 }
 
 .penguin-buttons img {
@@ -39,27 +39,43 @@ body, html {
 .penguin-button {
     width: 80px;
     height: 80px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(30, 64, 175, 0.12);
+    border: 2px solid #b6d4fa;
+    background: #e3f0fc;
+    transition: transform 0.2s, box-shadow 0.2s, border 0.2s;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    object-fit: cover;
 }
 
 .penguin-button:hover {
-    transform: scale(1.1);
+    transform: scale(1.12) rotate(-4deg);
+    box-shadow: 0 8px 24px rgba(25, 118, 210, 0.18);
+    border: 2px solid #1976d2;
 }
 
 .content {
+    background: rgba(255, 255, 255, 0.55);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 18px;
+    padding: 32px 24px;
+    margin: 0 16px;
     text-align: center;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 15px;
+    color: #1a3557;
+    text-shadow: none;
 }
 
 .penguin-gallery {
     overflow: hidden;
     width: 100%;
+    max-width: 520px;
+    margin: 32px auto 16px auto;
+    border-radius: 18px;
+    background: rgba(227, 240, 252, 0.7);
+    box-shadow: 0 2px 12px rgba(30, 64, 175, 0.08);
     position: relative;
-    margin: 20px 0;
 }
 
 .penguin-gallery img {
@@ -68,81 +84,83 @@ body, html {
 }
 
 .penguin-slider img {
-    width: 25%;
-    height: auto;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin: 0 8px;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.10);
+    border: 2px solid #b6d4fa;
+    background: #fff;
+    transition: transform 0.2s;
+}
+
+.penguin-slider img:hover {
+    transform: scale(1.08) rotate(2deg);
+    border: 2px solid #1976d2;
 }
 
 .penguin-slider {
     display: flex;
-    width: auto;
-    animation: scroll 20s linear infinite;
+    width: fit-content;
+    animation: scroll 18s linear infinite;
+    align-items: center;
+    gap: 0;
 }
 
 .birthday-message {
     font-size: 2em;
-    margin: 0;
-    margin-top: 20px 0;
+    margin: 12px 0 0 0;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 
-    -0.5px -0.5px 1px #5a5a5a,  
-    0.5px -0.5px 1px #5a5a5a,  
-    -0.5px 0.5px 1px #000,  
-    0.5px 0.5px 1px #000
+    color: #1a3557;
+    text-shadow: 0 2px 8px #b6d4fa;
 }
 
 .birthday-message-name {
     margin: 0;
-    font-size: 3em;
+    font-size: 2.6em;
     font-family: 'Dancing Script', cursive;
-    text-shadow: 
-    -0.5px -0.5px 1px #5a5a5a,  
-    0.5px -0.5px 1px #5a5a5a,  
-    -0.5px 0.5px 1px #000,  
-    0.5px 0.5px 1px #000
+    color: #1976d2;
+    text-shadow: 0 2px 8px #b6d4fa;
 }
 
 .sub-message {
-    font-weight: bold;
-    font-size: 1.2em;
-    text-shadow: 
-    -0.5px -0.5px 1px #5a5a5a,  
-    0.5px -0.5px 1px #5a5a5a,  
-    -0.5px 0.5px 1px #000,  
-    0.5px 0.5px 1px #000
+    font-weight: 500;
+    font-size: 1.1em;
+    color: #1976d2;
+    margin-top: 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.sub-message:hover {
+    color: #1a3557;
+    text-decoration: underline;
 }
 
 #stopMusic {
     position: fixed;
-    bottom: 10px;
-    left: 10px;
+    bottom: 18px;
+    left: 18px;
     font-size: 1em;
     color: #fff;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    background: #1976d2;
+    padding: 8px 18px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(25, 118, 210, 0.10);
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 5px;
+    border: none;
+    transition: background 0.2s;
+    z-index: 10;
+}
+
+#stopMusic:hover {
+    background: #1565c0;
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(-100%);
-    }
-}
-
-@media (max-width: 768px) {
-    .birthday-message {
-        font-size: 2em;
-    }
-    .sub-message {
-        font-size: 1em;
-    }
-    .penguin-musicians img {
-        width: 90%;
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* window */
@@ -159,19 +177,18 @@ body, html {
 }
 
 .window-content {
-    background-color: #fff;
+    background-color: #e3f0fc;
+    border: 1px solid #b6d4fa;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(30, 64, 175, 0.18);
+    color: #1a3557;
     margin: 15% auto; 
     padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
 }
 
 .close {
-    color: #aaa;
+    color: #1976d2;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -179,7 +196,7 @@ body, html {
 
 .close:hover,
 .close:focus {
-    color: black;
+    color: #1565c0;
     text-decoration: none;
     cursor: pointer;
 }
@@ -199,4 +216,29 @@ body, html {
 
 .birthday-message span.hover {
     animation: wave 0.6s ease infinite;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 18px 6px;
+    }
+    .birthday-message {
+        font-size: 2em;
+    }
+    .sub-message {
+        font-size: 1em;
+    }
+    .penguin-musicians img {
+        width: 90%;
+    }
+    .penguin-gallery {
+        max-width: 98vw;
+    }
+    .penguin-slider img {
+        width: 90px;
+        height: 90px;
+    }
+    .penguin-buttons {
+        gap: 12px;
+    }
 }

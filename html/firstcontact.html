@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¡Feliz Cumpleaños!</title>
     <link rel="stylesheet" href="../css/firstcontact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="background-art">
@@ -36,7 +37,7 @@
 
     <div id="myWindow" class="window">
         <div class="window-content">
-            <span class="close">&times;</span>
+            <span class="close" tabindex="0" aria-label="Cerrar">&times;</span>
             <h2>Quiero verte</h2>
             <p>Iré cambiando esta página con el tiempo con cosas y canciones que quiero dedicarte pero que no me atrevo a hablarte.</p>
             <p>Lo hago así para calmar mis ganas de hablarte pero sin hacerlo y asi no interferir con el proceso que llevas (aunque no te miento gran parte de mi desea que lo leas y escuches)</p>
@@ -46,9 +47,9 @@
             <p><b>te amo.</b></p>
         </div>
     </div>
-    <p id="stopMusic">Para silenciar/reanudar la miusik</p>
+    <button id="stopMusic" aria-label="Silenciar o reanudar música">🎵</button>
 
-    <audio id="backgroundMusic" autoplay loop >
+    <audio id="backgroundMusic" autoplay loop>
         <source src="../music/hb-infantil.m4a" type="audio/mpeg">
         <source src="../music/hb-vallenato.m4a" type="audio/mpeg">
         <source src="../music/hb-reggaeton.mp3" type="audio/mpeg">

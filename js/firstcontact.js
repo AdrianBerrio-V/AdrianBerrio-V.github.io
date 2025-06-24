@@ -1,94 +1,91 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var audio = document.getElementById('backgroundMusic');
-    var penguin1 = document.getElementById('penguin1');
-    var penguin2 = document.getElementById('penguin2');
-    var penguin3 = document.getElementById('penguin3');
-    var penguin4 = document.getElementById('penguin4');
-    var currentSong = 3;
-    var songs = [
+    const audio = document.getElementById('backgroundMusic');
+    const penguins = [
+        document.getElementById('penguin1'),
+        document.getElementById('penguin2'),
+        document.getElementById('penguin3'),
+        document.getElementById('penguin4')
+    ];
+    const songs = [
         '../music/hb-infantil.m4a',
         '../music/hb-vallenato.m4a',
         '../music/hb-reggaeton.mp3',
         '../music/besos-limon-miel.m4a'
     ];
+    let currentSong = 3;
 
     function playSong(index) {
         audio.src = songs[index];
-        audio.play().catch(error => {
-            console.log("Error al reproducir: ", error);
-        });
+        audio.play().catch(() => {});
     }
 
-    penguin1.addEventListener('click', function() {
-        currentSong = 0;
-        playSong(currentSong);
-    });
-
-    penguin2.addEventListener('click', function() {
-        currentSong = 1;
-        playSong(currentSong);
-    });
-
-    penguin3.addEventListener('click', function() {
-        currentSong = 2;
-        playSong(currentSong);
-    });
-
-    penguin4.addEventListener('click', function() {
-        currentSong = 3;
-        playSong(currentSong);
+    penguins.forEach((penguin, idx) => {
+        penguin.addEventListener('click', () => {
+            currentSong = idx;
+            playSong(currentSong);
+        });
     });
 
     playSong(currentSong);
 
-    // Ventana modal
-    var message = document.getElementById("myWindow");
-    var btn = document.getElementById("openWindow");
-    var close = document.getElementsByClassName("close")[0];
+    // Modal
+    const message = document.getElementById("myWindow");
+    const btn = document.getElementById("openWindow");
+    const close = document.querySelector(".close");
 
-    // Cambia el evento de clic para abrir la ventana modal
-    btn.addEventListener('click', function() {
-        message.style.display = "block"; // Muestra la ventana modal
+    btn.addEventListener('click', () => {
+        message.style.display = "flex";
+        document.body.style.overflow = "hidden";
     });
 
-    close.addEventListener('click', function() {
-        message.style.display = "none"; // Cierra la ventana modal
+    close.addEventListener('click', () => {
+        message.style.display = "none";
+        document.body.style.overflow = "";
+    });
+
+    close.addEventListener('keydown', (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+            message.style.display = "none";
+            document.body.style.overflow = "";
+        }
     });
 
     window.addEventListener('click', function(event) {
         if (event.target == message) {
-            message.style.display = "none"; // Cierra la ventana modal al hacer clic fuera
+            message.style.display = "none";
+            document.body.style.overflow = "";
         }
     });
-});
 
-
-document.getElementById('stopMusic').addEventListener('click', function() {
-    var audio = document.getElementById('backgroundMusic');
-    if (!audio.paused) {
-        audio.pause();
-    } else {
-        audio.play();
-    }
-});
-
-document.querySelector('.birthday-message').classList.add('animate-text');
-
-const text = document.querySelector('.birthday-message');
-text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
-
-text.addEventListener('mouseover', function() {
-    text.querySelectorAll('span').forEach((char, i) => {
-        setTimeout(() => {
-            char.classList.add('hover');
-        }, i * 50);
+    // Música: silenciar/reanudar
+    const stopBtn = document.getElementById('stopMusic');
+    stopBtn.addEventListener('click', function() {
+        if (!audio.paused) {
+            audio.pause();
+            stopBtn.textContent = "🔇";
+        } else {
+            audio.play();
+            stopBtn.textContent = "🎵";
+        }
     });
-});
 
-text.addEventListener('mouseout', function() {
-    text.querySelectorAll('span').forEach((char, i) => {
-        setTimeout(() => {
-            char.classList.remove('hover');
-        }, i * 50);
+    // Animación de texto
+    const text = document.querySelector('.birthday-message');
+    text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+
+    text.addEventListener('mouseover', function() {
+        text.querySelectorAll('span').forEach((char, i) => {
+            setTimeout(() => {
+                char.classList.add('hover');
+            }, i * 50);
+        });
+    });
+
+    text.addEventListener('mouseout', function() {
+        text.querySelectorAll('span').forEach((char, i) => {
+            setTimeout(() => {
+                char.classList.remove('hover');
+            }, i * 50);
+        });
     });
 });

@@ -1,6 +1,7 @@
 body {
-    font-family: "Almarai", sans-serif;
-    background: linear-gradient(to bottom, #77d5fa, #f2feff);
+    font-family: 'Inter', 'Almarai', sans-serif;
+    background: #e6f0fa;
+    color: #1a3557;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,44 +10,51 @@ body {
 }
 
 .container {
-    background-color: aliceblue;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(30, 64, 175, 0.08);
+    padding: 40px 32px;
+    width: 100%;
+    max-width: 400px;
+    min-height: 340px;
     display: flex;
-    width: 65%;
-    height: 80%;
     flex-direction: column;
     align-items: center;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
+}
+
+.title h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 28px;
+    letter-spacing: 0.01em;
+    color: #1a3557;
 }
 
 .buttons {
-    flex: 1;
-    padding: 5px;
-    display: flex;
-    align-items: flex-start;
     width: 100%;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    justify-content: center;
-    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 }
 
 button {
-    width: 250px;
-    height: 60px;
-    margin: 5px 10px;
-    border: none;
+    background: #e3f0fc;
+    color: #1a3557;
+    border: 1.5px solid #b6d4fa;
     border-radius: 8px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(to bottom, #77d5fa, #a2d7ec);
-    transition: transform 200ms ease-in-out, font-weight 200ms ease-in-out, box-shadow 200ms ease-in-out;
+    font-size: 1.08rem;
+    font-weight: 500;
+    padding: 0;
+    height: 46px;
+    transition: background 0.18s, color 0.18s, box-shadow 0.18s, border 0.18s;
+    box-shadow: none;
+    cursor: pointer;
+    outline: none;
 }
 
-button:hover {
-    transform: scale(1.08);
-    font-weight: bold;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to bottom, #a2d7ec, #77d5fa);
+button:hover, button:focus {
+    background: #1976d2;
+    color: #fff;
+    border: 1.5px solid #1565c0;
+    box-shadow: 0 2px 12px rgba(25, 118, 210, 0.10);
 }
