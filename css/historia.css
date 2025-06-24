@@ -1,0 +1,223 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Inter', 'EB Garamond', serif;
+    background: #e6f0fa;
+    color: #1a3557;
+    position: relative;
+}
+
+.polar-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(135deg, #e6f0fa 0%, #b3c6f7 100%);
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+header {
+    text-align: center;
+    padding: 2.5rem 1rem 1.2rem 1rem;
+    background: transparent;
+}
+
+header h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.7rem;
+    letter-spacing: 0.04em;
+    margin: 0;
+    color: #1a3557;
+}
+
+.subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    color: #4a6fa1;
+    margin-top: 0.5rem;
+}
+
+main {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    z-index: 1;
+    position: relative;
+}
+
+section {
+    margin-bottom: 2.5rem;
+    background: rgba(255,255,255,0.82);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(30, 64, 175, 0.08);
+    padding: 1.5rem 1.2rem;
+}
+
+h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.5rem;
+    color: #1976d2;
+    margin-top: 0;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.02em;
+}
+
+.fragmentos-list, .profesores, .libros-list, .notas-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    justify-content: flex-start;
+}
+
+.fragmento-card, .profesor-card, .libro-card, .nota-card {
+    background: #f7fbff;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(30, 64, 175, 0.07);
+    padding: 1.1rem 1rem;
+    min-width: 220px;
+    max-width: 320px;
+    flex: 1 1 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+}
+
+.penguin-icon, .book-icon {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 0.7rem;
+    filter: drop-shadow(0 2px 6px #b6d4fa);
+}
+
+blockquote {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1rem;
+    color: #1a3557;
+    margin: 0 0 0.5rem 0;
+    font-style: italic;
+}
+
+cite {
+    font-size: 0.95rem;
+    color: #4a6fa1;
+    margin-top: 0.2rem;
+}
+
+.timeline {
+    border-left: 3px solid #b6d4fa;
+    margin-left: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.event {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.event-dot {
+    width: 18px;
+    height: 18px;
+    background: #1976d2;
+    border-radius: 50%;
+    margin-right: 1.1rem;
+    margin-left: -2.6rem;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px #b6d4fa;
+    flex-shrink: 0;
+    position: absolute;
+    left: -2.6rem;
+    top: 0.2rem;
+}
+
+.event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.event-date {
+    font-size: 1.05rem;
+    color: #4a6fa1;
+    font-family: 'Inter', sans-serif;
+}
+
+.event-title {
+    font-weight: 600;
+    color: #1976d2;
+    font-size: 1.1rem;
+}
+
+.event-desc {
+    font-size: 1rem;
+    color: #1a3557;
+}
+
+.profesor-card h3 {
+    margin: 0 0 0.4rem 0;
+    font-family: 'EB Garamond', serif;
+    color: #1976d2;
+    font-size: 1.1rem;
+}
+
+.libro-card h4 {
+    margin: 0 0 0.3rem 0;
+    font-family: 'EB Garamond', serif;
+    color: #1a3557;
+    font-size: 1.08rem;
+}
+
+.nota-card {
+    background: #e6f0fa;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    color: #1a3557;
+    border-left: 4px solid #1976d2;
+    margin-bottom: 0.5rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+.nota-fecha {
+    display: block;
+    font-size: 0.92rem;
+    color: #4a6fa1;
+    margin-top: 0.3rem;
+    font-family: 'Inter', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    color: #4a6fa1;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+    background: transparent;
+}
+
+@media (max-width: 900px) {
+    main {
+        padding: 0.5rem;
+    }
+    section {
+        padding: 1rem 0.5rem;
+    }
+    .fragmento-card, .profesor-card, .libro-card, .nota-card {
+        min-width: 160px;
+        max-width: 100%;
+    }
+    .timeline {
+        margin-left: 0.5rem;
+        padding-left: 0.7rem;
+    }
+    .event-dot {
+        margin-left: -1.5rem;
+        left: -1.5rem;
+    }
+}
